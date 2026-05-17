@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -12,17 +10,40 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
 </head>
 
 <body>
+
+<!-- TOP HEADER -->
+
+<div class="top-bar">
+🔥 Welcome To Global ST Shop
+</div>
 
 <!-- HEADER -->
 
 <header>
 
 <div class="logo">
-🛍️ Global ST SHOP
+🛍️ Global ST Shop
 </div>
+
+<!-- SEARCH -->
+
+<div class="search-box">
+
+<input type="text" placeholder="Search products...">
+
+<button>
+<i class="fa fa-search"></i>
+</button>
+
+</div>
+
+<!-- NAV -->
 
 <nav>
 
@@ -30,34 +51,11 @@
 
 <li><a href="index.html">Home</a></li>
 
-<li class="dropdown">
+<li><a href="books.html">Books</a></li>
 
-<a href="#">Shop ▼</a>
-
-<ul class="submenu">
-
-<li><a href="#">All Products</a></li>
-<li><a href="#">New Arrivals</a></li>
-<li><a href="#">Best Sellers</a></li>
-
-</ul>
-
-</li>
-
-<li class="dropdown">
-
-<a href="#">Categories ▼</a>
-
-<ul class="submenu">
-
-<li><a href="#">Books</a></li>
 <li><a href="#">Electronics</a></li>
+
 <li><a href="#">Fashion</a></li>
-<li><a href="#">Accessories</a></li>
-
-</ul>
-
-</li>
 
 <li><a href="#">Offers</a></li>
 
@@ -67,154 +65,164 @@
 
 </nav>
 
+<!-- RIGHT -->
+
 <div class="nav-right">
 
-<input type="text" placeholder="Search..." class="search">
-
-<div class="cart-icon">
+<div class="cart">
 🛒
 <span id="cart-count">0</span>
-</div>
-
 </div>
 
 <div class="menu-btn">
 ☰
 </div>
 
+</div>
+
 </header>
 
-<!-- HERO SLIDER -->
+<!-- HERO -->
 
-<section class="hero-slider">
-
-<div class="hero-slide active">
-
-<img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=1600">
-
-<div class="overlay"></div>
+<section class="hero">
 
 <div class="hero-content">
 
-<h1>Premium Ecommerce Store</h1>
+<h1>
+Discover Amazing Products
+</h1>
 
 <p>
-Discover amazing products at the best prices
+Amazon Style Modern Ecommerce Website
 </p>
 
 <div class="hero-buttons">
 
-<button class="btn1">
+<button onclick="window.location.href='books.html'">
+Explore Books
+</button>
+
+<button>
 Shop Now
 </button>
 
-<button class="btn2">
-New Arrivals
-</button>
-
 </div>
 
-</div>
-
-</div>
-
-<div class="hero-slide">
-
-<img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=1600">
-
-<div class="overlay"></div>
-
-<div class="hero-content">
-
-<h1>Modern Collections</h1>
-
-<p>
-Upgrade your lifestyle with premium products
-</p>
-
-<div class="hero-buttons">
-
-<button class="btn1">
-Explore
-</button>
-
-<button class="btn2">
-Best Sellers
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- STATS -->
-
-<section class="stats">
-
-<div class="stat-box">
-<h2>500+</h2>
-<p>Products</p>
-</div>
-
-<div class="stat-box">
-<h2>10K+</h2>
-<p>Customers</p>
-</div>
-
-<div class="stat-box">
-<h2>99%</h2>
-<p>Satisfaction</p>
-</div>
-
-<div class="stat-box">
-<h2>24/7</h2>
-<p>Support</p>
 </div>
 
 </section>
 
 <!-- CATEGORIES -->
 
-<section class="categories">
+<section class="category-section">
 
-<div class="cat">
+<h2>Shop By Categories</h2>
+
+<div class="categories">
+
+<div class="cat-card">
 📚
 <h3>Books</h3>
 </div>
 
-<div class="cat">
+<div class="cat-card">
 🎧
 <h3>Electronics</h3>
 </div>
 
-<div class="cat">
+<div class="cat-card">
 👕
 <h3>Fashion</h3>
 </div>
 
-<div class="cat">
+<div class="cat-card">
 ⌚
 <h3>Accessories</h3>
 </div>
 
+</div>
+
 </section>
 
-<!-- FEATURED PRODUCTS -->
+<!-- PRODUCTS -->
 
-<section class="featured-title">
+<section class="products-section">
 
 <h2>Featured Products</h2>
 
-<p>
-Explore our latest collections
-</p>
+<div id="products"></div>
 
 </section>
 
-<section id="products">
+<!-- OFFER BANNER -->
+
+<section class="offer-banner">
+
+<h2>
+🔥 Big Sale Up To 50% OFF
+</h2>
+
+<p>
+Limited Time Offer
+</p>
+
+<button>
+Shop Deals
+</button>
+
+</section>
+
+<!-- BOOK SECTION -->
+
+<section class="book-preview">
+
+<h2>Popular Books</h2>
+
+<div class="book-grid">
+
+<div class="book-card">
+
+<img src="images/M.jpg">
+
+<h3>মেঘে ঢাকা রংধনু</h3>
+
+<p>৳250</p>
+
+<button onclick="window.location.href='books.html'">
+View
+</button>
+
+</div>
+
+<div class="book-card">
+
+<img src="images/kalo.jpg">
+
+<h3>কালো দিঘি</h3>
+
+<p>৳280</p>
+
+<button onclick="window.location.href='books.html'">
+View
+</button>
+
+</div>
+
+<div class="book-card">
+
+<img src="images/Raktim Sayman.jpg">
+
+<h3>রক্তিম সাইমন</h3>
+
+<p>৳300</p>
+
+<button onclick="window.location.href='books.html'">
+View
+</button>
+
+</div>
+
+</div>
 
 </section>
 
@@ -228,33 +236,47 @@ Explore our latest collections
 
 <footer>
 
-<div class="footer-content">
+<div class="footer-container">
 
-<h2>Global ST SHOP</h2>
+<div>
+
+<h3>Global ST Shop</h3>
 
 <p>
-Modern Ecommerce Website
+Modern Ecommerce Platform
 </p>
 
-<div class="footer-links">
+</div>
 
-<a href="#">Home</a>
-<a href="#">Shop</a>
-<a href="#">Categories</a>
+<div>
+
+<h3>Quick Links</h3>
+
+<a href="index.html">Home</a>
+<a href="books.html">Books</a>
 <a href="#">Contact</a>
 
 </div>
 
-<p class="copy">
-© 2026 Global ST SHOP — All Rights Reserved
-</p>
+<div>
+
+<h3>Support</h3>
+
+<p>24/7 Customer Support</p>
+
+<p>Email: support@globalshop.com</p>
 
 </div>
 
+</div>
+
+<p class="copy">
+© 2026 Global ST Shop — All Rights Reserved
+</p>
+
 </footer>
 
-<script type="module" src="app.js"></script>
+<script type="module" src="admin.js"></script>
 
 </body>
-
 </html>

@@ -5,11 +5,27 @@ collection,
 getDocs
 } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
-/* PRODUCTS LOAD */
+/* =========================
+MOBILE MENU
+========================= */
+
+const menuBtn = document.querySelector(".menu-btn");
+
+const nav = document.querySelector("nav");
+
+menuBtn.onclick = ()=>{
+nav.classList.toggle("active");
+};
+
+/* =========================
+LOAD PRODUCTS
+========================= */
 
 const box = document.getElementById("products");
 
 async function loadProducts(){
+
+try{
 
 const querySnapshot = await getDocs(collection(db,"products"));
 
@@ -41,55 +57,41 @@ Add To Cart
 
 });
 
+}catch(error){
+
+console.log(error);
+
+box.innerHTML = `
+
+<h2 style="text-align:center;">
+Products Failed To Load
+</h2>
+
+`;
+
+}
+
 }
 
 loadProducts();
 
-/* HERO SLIDER */
+/* =========================
+CART
+========================= */
 
-let heroSlides = document.querySelectorAll(".hero-slide");
+function updateCart(){
 
-let currentHero = 0;
-
-setInterval(()=>{
-
-heroSlides[currentHero].classList.remove("active");
-
-currentHero++;
-
-if(currentHero >= heroSlides.length){
-currentHero = 0;
-}
-
-heroSlides[currentHero].classList.add("active");
-
-},4000);
-
-/* MOBILE MENU */
-
-let menuBtn = document.querySelector(".menu-btn");
-
-let nav = document.querySelector("nav");
-
-menuBtn.onclick = ()=>{
-nav.classList.toggle("active");
-}
-
-/* CART */
-
-function updateCartCount(){
-
-    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 document.getElementById("cart-count").innerText = cart.length;
 
 }
 
-updateCartCount();
+updateCart();
 
 window.addCart = function(name,price){
 
-    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 cart.push({
 name,
@@ -98,8 +100,8 @@ price
 
 localStorage.setItem("cart",JSON.stringify(cart));
 
-updateCartCount();
+updateCart();
 
-alert("Added To Cart");
+alert(name + " Added To Cart");
 
 }
