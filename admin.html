@@ -1,26 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Admin Panel</title>
+<title>Global ST Shop Admin</title>
 
 <link rel="stylesheet" href="admin.css">
+
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 </head>
+
 <body>
 
-    <h1 style="color:red;font-size:50px;">
-ADMIN PANEL TEST
-</h1>
+<div class="admin-container">
 
-<div class="admin-box">
+<!-- LEFT -->
 
-<h1>🛍️ Global ST Shop Admin</h1>
+<div class="admin-left">
+
+<h1>🛍️ Admin Dashboard</h1>
 
 <input type="text" id="name" placeholder="Product Name">
+
 <input type="number" id="price" placeholder="Price">
 
 <input type="text" id="img" placeholder="Image URL">
@@ -28,11 +33,27 @@ ADMIN PANEL TEST
 <button onclick="addProduct()">
 Add Product
 </button>
+
 <p id="msg"></p>
+
+</div>
+
+<!-- RIGHT -->
+
+<div class="admin-right">
+
+<h2>All Products</h2>
+
+<div id="product-list">
+
+</div>
+
+</div>
 
 </div>
 
 <script type="module" src="admin.js"></script>
 
 </body>
+
 </html>
