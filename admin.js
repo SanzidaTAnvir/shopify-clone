@@ -5,7 +5,8 @@ collection,
 addDoc,
 getDocs,
 deleteDoc,
-doc
+doc,
+updateDoc
 } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
 /* ADD PRODUCT */
@@ -49,7 +50,11 @@ loadProducts();
 
 const productBox = document.getElementById("product-list");
 
+let currentEditId = null;
+
 async function loadProducts(){
+
+if(!productBox) return;
 
 productBox.innerHTML = "";
 
@@ -71,6 +76,15 @@ productBox.innerHTML += `
 <h3>${p.name}</h3>
 
 <p>৳ ${p.price}</p>
+
+<button onclick="editProduct(
+'${item.id}',
+'${p.name}',
+'${p.price}',
+'${p.img}'
+)">
+Edit
+</button>
 
 <button onclick="deleteProduct('${item.id}')">
 Delete
@@ -94,6 +108,63 @@ window.deleteProduct = async function(id){
 
 await deleteDoc(doc(db,"products",id));
 
+alert("✅ Product Deleted");
+
 loadProducts();
+
+}
+
+/* EDIT PRODUCT */
+
+window.editProduct = function(id,name,price,img){
+
+currentEditId = id;
+
+document.getElementById("edit-name").value = name;
+
+document.getElementById("edit-price").value = price;
+
+document.getElementById("edit-img").value = img;
+
+document.getElementById("edit-modal").style.display =
+"flex";
+
+}
+
+/* UPDATE PRODUCT */
+
+window.updateProduct = async function(){
+
+const name =
+document.getElementById("edit-name").value;
+
+const price =
+document.getElementById("edit-price").value;
+
+const img =
+document.getElementById("edit-img").value;
+
+await updateDoc(doc(db,"products",currentEditId),{
+
+name:name,
+price:Number(price),
+img:img
+
+});
+
+alert("✅ Product Updated");
+
+closeModal();
+
+loadProducts();
+
+}
+
+/* CLOSE MODAL */
+
+window.closeModal = function(){
+
+document.getElementById("edit-modal").style.display =
+"none";
 
 }
