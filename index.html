@@ -1,21 +1,260 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-<title>Shopify Clone</title>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Global ST Shop</title>
+
 <link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
 
+<!-- HEADER -->
+
 <header>
-<h2>🛍 Shopify Clone Store</h2>
-<a href="checkout.html">Cart / Checkout</a>
-<a href="admin.html">Admin</a>
+
+<div class="logo">
+🛍️ Global ST SHOP
+</div>
+
+<nav>
+
+<ul>
+
+<li><a href="index.html">Home</a></li>
+
+<li class="dropdown">
+
+<a href="#">Shop ▼</a>
+
+<ul class="submenu">
+
+<li><a href="#">All Products</a></li>
+<li><a href="#">New Arrivals</a></li>
+<li><a href="#">Best Sellers</a></li>
+
+</ul>
+
+</li>
+
+<li class="dropdown">
+
+<a href="#">Categories ▼</a>
+
+<ul class="submenu">
+
+<li><a href="#">Books</a></li>
+<li><a href="#">Electronics</a></li>
+<li><a href="#">Fashion</a></li>
+<li><a href="#">Accessories</a></li>
+
+</ul>
+
+</li>
+
+<li><a href="#">Offers</a></li>
+
+<li><a href="#">Contact</a></li>
+
+</ul>
+
+</nav>
+
+<div class="nav-right">
+
+<input type="text" placeholder="Search..." class="search">
+
+<div class="cart-icon">
+🛒
+<span id="cart-count">0</span>
+</div>
+
+</div>
+
+<div class="menu-btn">
+☰
+</div>
+
 </header>
 
-<div id="products"></div>
+<!-- HERO SLIDER -->
+
+<section class="hero-slider">
+
+<div class="hero-slide active">
+
+<img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=1600">
+
+<div class="overlay"></div>
+
+<div class="hero-content">
+
+<h1>Premium Ecommerce Store</h1>
+
+<p>
+Discover amazing products at the best prices
+</p>
+
+<div class="hero-buttons">
+
+<button class="btn1">
+Shop Now
+</button>
+
+<button class="btn2">
+New Arrivals
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="hero-slide">
+
+<img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=1600">
+
+<div class="overlay"></div>
+
+<div class="hero-content">
+
+<h1>Modern Collections</h1>
+
+<p>
+Upgrade your lifestyle with premium products
+</p>
+
+<div class="hero-buttons">
+
+<button class="btn1">
+Explore
+</button>
+
+<button class="btn2">
+Best Sellers
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- STATS -->
+
+<section class="stats">
+
+<div class="stat-box">
+<h2>500+</h2>
+<p>Products</p>
+</div>
+
+<div class="stat-box">
+<h2>10K+</h2>
+<p>Customers</p>
+</div>
+
+<div class="stat-box">
+<h2>99%</h2>
+<p>Satisfaction</p>
+</div>
+
+<div class="stat-box">
+<h2>24/7</h2>
+<p>Support</p>
+</div>
+
+</section>
+
+<!-- CATEGORIES -->
+
+<section class="categories">
+
+<div class="cat">
+📚
+<h3>Books</h3>
+</div>
+
+<div class="cat">
+🎧
+<h3>Electronics</h3>
+</div>
+
+<div class="cat">
+👕
+<h3>Fashion</h3>
+</div>
+
+<div class="cat">
+⌚
+<h3>Accessories</h3>
+</div>
+
+</section>
+
+<!-- FEATURED PRODUCTS -->
+
+<section class="featured-title">
+
+<h2>Featured Products</h2>
+
+<p>
+Explore our latest collections
+</p>
+
+</section>
+
+<section id="products">
+
+</section>
+
+<!-- WHATSAPP -->
+
+<a href="https://wa.me/8801795351771" class="whatsapp">
+💬
+</a>
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="footer-content">
+
+<h2>Global ST SHOP</h2>
+
+<p>
+Modern Ecommerce Website
+</p>
+
+<div class="footer-links">
+
+<a href="#">Home</a>
+<a href="#">Shop</a>
+<a href="#">Categories</a>
+<a href="#">Contact</a>
+
+</div>
+
+<p class="copy">
+© 2026 Global ST SHOP — All Rights Reserved
+</p>
+
+</div>
+
+</footer>
 
 <script type="module" src="app.js"></script>
 
 </body>
+
 </html>
