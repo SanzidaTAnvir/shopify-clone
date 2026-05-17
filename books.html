@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Robin Book Store</title>
+<link rel="stylesheet" href="books.css">
+</head>
+
+<body>
+
+<header>
+    <h1>📚 Robin Book Store</h1>
+</header>
+
+<!-- 🔥 SLIDER -->
+<section class="slider">
+    <img src="images/banner1.png" class="slide active">
+    <img src="images/banner2.jpg" class="slide">
+    <img src="images/banner3.jpg" class="slide">
+</section>
+
+<!-- 🔥 BOOK SECTION -->
+<section class="books-section">
+    <h2>📖 My Books</h2>
+    <div id="bookContainer"></div>
+</section>
+
+<!-- 🔥 FOOTER -->
+<footer>
+    <p>© 2026 Robin Book Store</p>
+</footer>
+
+<script>
+
+// 🔥 BOOK DATA (সব আগের মতোই)
+const books = [
+{
+name:"মেঘে ঢাকা রংধনু",
+price:250,
+img:"images/M.jpg",
+details:"একটি আবেগঘন প্রেমের গল্প"
+},
+
+{
+name:"কালো দিঘি",
+price:280,
+img:"images/kalo.jpg",
+details:"রহস্য ও ভৌতিক গল্প"
+},
+
+{
+name:"হৃদয় মুখোশ",
+price:280,
+img:"images/k.jpg",
+details:"রহস্য ও ভৌতিক গল্প"
+},
+{
+name:"৫৯ আওয়ার'স উইথ ডাইরি",
+price:280,
+img:"images/59.jpg",
+details:"রহস্য ও ভৌতিক গল্প"
+},
+{
+name:"সন্ধ্যা বেলার প্রেম",
+price:280,
+img:"images/sondha.jpg",
+details:"রহস্য ও ভৌতিক গল্প"
+},
+{
+name:"রক্তিম সাইমন (প্রথম খন্ড)",
+price:280,
+img:"images/Raktim Sayman.jpg",
+details:"রহস্য ও ভৌতিক গল্প"
+},
+{
+name:"রক্তিম সাইমন (২য় খন্ড)",
+price:280,
+img:"images/Raktim Sayman1.jpg",
+details:"রহস্য ও ভৌতিক গল্প"
+},
+
+{
+name:"রক্তিম সাইমন ৩",
+price:300,
+img:"images/Raktim Sayman2.jpg",
+details:"থ্রিলার ও অ্যাকশন"
+}
+];
+
+// 🔥 AUTO LOAD BOOK
+const container = document.getElementById("bookContainer");
+
+books.forEach(book=>{
+container.innerHTML += `
+<div class="book">
+    <img src="${book.img}" class="book-img">
+    <h3>${book.name}</h3>
+    <p class="details">${book.details}</p>
+    <p class="price">৳${book.price}</p>
+    <button onclick="orderNow('${book.name}',${book.price})">Order Now</button>
+</div>
+`;
+});
+
+// 🔥 WHATSAPP ORDER (আগের মতোই)
+function orderNow(name,price){
+
+let phone="8801795351771";
+
+let msg=`📚 Book Order:
+${name}
+Price: ৳${price}
+
+I want to order this book.`;
+
+let url=`https://wa.me/${phone}?text=${encodeURIComponent(msg)}`;
+
+window.open(url,"_blank");
+}
+
+// 🔥 PERFECT SLIDER
+let slides = document.querySelectorAll(".slide");
+let index = 0;
+
+setInterval(()=>{
+    slides[index].classList.remove("active");
+    index = (index + 1) % slides.length;
+    slides[index].classList.add("active");
+},3000);
+
+</script>
+
+</body>
+</html>
